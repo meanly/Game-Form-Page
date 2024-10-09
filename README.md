@@ -24,3 +24,7 @@ This project features a Sign Up / Login page for the game **Infected: System Def
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/infected-game-login-page.git
+
+![image](https://github.com/user-attachments/assets/e8b3bf1d-fd00-4687-9a50-3f0e247411fd)
+![image](https://github.com/user-attachments/assets/7083abf2-d7bb-4b3a-b0a1-ba55f944f45f)
+![image](https://github.com/user-attachments/assets/ede1e0ff-dae0-49b9-94bf-0676e4d28845)

@@ -27,4 +27,4 @@ This project features a Sign Up / Login page for the game **Infected: System Def
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/infected-game-login-page.git
+   git clone https://github.com/meanly/S-CSGD311LA-Game-Login.git

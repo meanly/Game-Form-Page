@@ -22,7 +22,7 @@ This project features a Sign Up / Login page for the game **Infected: System Def
 ## Features
 - User-friendly interface for account creation and login.
 - Responsive design for accessibility on various devices.
-- Clean and modern aesthetic influenced by popular gaming interfaces.
+- Clean and modern aesthetic..
 
 ## Installation
 1. Clone the repository:

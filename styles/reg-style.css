@@ -99,7 +99,6 @@ form {
   width: 40%;
 }
 
-
 form .input-container {
   position: relative;
   height: 4em;
@@ -109,11 +108,18 @@ form .input-container {
   border-bottom-width: 1px;
 }
 
-form input[name="username"] {
-  /* Custom styles for the username input field */
-  width: 20%;
+form input[name="birthday"] {
+  width: 100%;
+  font-size: 27px;
 }
 
+form #birthday-label {
+  font-size: 0.85em !important; 
+  opacity: 1 !important; 
+  position: absolute !important; 
+  left: -2px !important; 
+  top: 0.2em !important;
+}
 
 form .input-value {
   float: right;

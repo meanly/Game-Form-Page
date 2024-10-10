@@ -1,6 +1,6 @@
 // signup.js
 document.addEventListener("DOMContentLoaded", function () {
-  const signupButton = document.querySelector(".register-button");
+  const signupButton = document.querySelector(".btn"); // Updated button reference
   const errorLabel = document.createElement("label");
   errorLabel.style.color = "red"; // Change to desired error color
   errorLabel.style.display = "none"; // Initially hidden
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ageErrorLabel.style.display = "none"; // Initially hidden
   ageErrorLabel.textContent = "You must be at least 18 years old!";
 
-  const registerForm = document.querySelector(".register-form");
+  const registerForm = document.getElementById("register_form"); // Updated form reference
   registerForm.appendChild(errorLabel);
   registerForm.appendChild(ageErrorLabel);
 
@@ -28,29 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Check if the user is at least 18 years old
-    const day = parseInt(registerForm.querySelector(".dob-day").value);
-    const monthString = registerForm.querySelector(".dob-month").value;
-    const year = parseInt(registerForm.querySelector(".dob-year").value);
-
-    // Convert month string to numeric value
-    const monthMapping = {
-      Jan: 0,
-      Feb: 1,
-      Mar: 2,
-      Apr: 3,
-      May: 4,
-      Jun: 5,
-      Jul: 6,
-      Aug: 7,
-      Sep: 8,
-      Oct: 9,
-      Nov: 10,
-      Dec: 11,
-    };
-
-    const month = monthMapping[monthString]; // Get numeric month
-
-    const dob = new Date(year, month, day);
+    const birthdayInput = registerForm.querySelector(".birthday-input").value; // Use input type date
+    const dob = new Date(birthdayInput);
     const age = new Date().getFullYear() - dob.getFullYear();
     const isAdult = age > 18 || (age === 18 && new Date() >= dob);
 

@@ -1,4 +1,3 @@
-// signup.js
 document.addEventListener("DOMContentLoaded", function () {
   const signupButton = document.querySelector(".btn"); // Updated button reference
   const errorLabel = document.createElement("label");
@@ -11,9 +10,21 @@ document.addEventListener("DOMContentLoaded", function () {
   ageErrorLabel.style.display = "none"; // Initially hidden
   ageErrorLabel.textContent = "You must be at least 18 years old!";
 
+  const emailErrorLabel = document.createElement("label");
+  emailErrorLabel.style.color = "red"; // Change to desired error color
+  emailErrorLabel.style.display = "none"; // Initially hidden
+  emailErrorLabel.textContent = "Please enter a valid email address!";
+
   const registerForm = document.getElementById("register_form"); // Updated form reference
   registerForm.appendChild(errorLabel);
   registerForm.appendChild(ageErrorLabel);
+  registerForm.appendChild(emailErrorLabel); // Append email error label
+
+  // Email validation function
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
 
   signupButton.addEventListener("click", function (event) {
     event.preventDefault(); // Prevent form submission
@@ -27,6 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
+    // Validate email
+    const emailInput = registerForm.querySelector('input[name="email"]'); // Update with your actual email input name
+    const email = emailInput.value.trim();
+    const validEmail = isValidEmail(email);
+
     // Check if the user is at least 18 years old
     const birthdayInput = registerForm.querySelector(".birthday-input").value; // Use input type date
     const dob = new Date(birthdayInput);
@@ -37,12 +53,19 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!allFilled) {
       errorLabel.style.display = "block"; // Show error
       ageErrorLabel.style.display = "none"; // Hide age error
+      emailErrorLabel.style.display = "none"; // Hide email error
+    } else if (!validEmail) {
+      emailErrorLabel.style.display = "block"; // Show email error
+      errorLabel.style.display = "none"; // Hide general error
+      ageErrorLabel.style.display = "none"; // Hide age error
     } else if (!isAdult) {
       ageErrorLabel.style.display = "block"; // Show age error
       errorLabel.style.display = "none"; // Hide general error
+      emailErrorLabel.style.display = "none"; // Hide email error
     } else {
       errorLabel.style.display = "none"; // Hide general error
       ageErrorLabel.style.display = "none"; // Hide age error
+      emailErrorLabel.style.display = "none"; // Hide email error
       // Redirect to success.html
       window.location.href = "success.html"; // Adjust the path if needed
     }

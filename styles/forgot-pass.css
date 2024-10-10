@@ -155,6 +155,22 @@ form input:focus + label, form input:valid + label {
   animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
+.info-button {
+  position: absolute;
+  cursor: pointer;
+  left: 5%;
+  top: 88%;
+}
+
+.info-button :hover {
+  background-color: #1e6cb4;
+}
+
+.info-button img {
+  width: 26px; /* Set desired width */
+  height: 26px; /* Set desired height */
+}
+
 @keyframes labelIn {
   0% {
     left: 1px;
